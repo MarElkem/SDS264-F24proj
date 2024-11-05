@@ -1,0 +1,103 @@
+---
+title: "R Tip of The Day"
+author: "DataEdtiR Package"
+format: 
+  revealjs:
+    slide-level: 2
+    transition: "slide"  # You can change the transition here
+---
+
+```{r}
+library(DataEditR)
+```
+
+## Better Visuals on RStudio?
+
+> > Do you wish you can look at the data in a sheet format?
+
+> > Would it be nice to edit a specific cell?
+
+> > Would you want to rename columns easier?
+> >
+> > ![](images/download (2).jpeg)
+
+------------------------------------------------------------------------
+
+## DataEditR
+
+## This package helps you interactively view, enter, filter, and edit data.
+
+## Tutorial Time!!!
+
+## More Options
+
+Checkboxes can be used to obtain TRUE or FALSE value inputs from users. The resulting data will have a value of TRUE or NA based on user input.
+
+```{r, eval=FALSE, echo=TRUE}
+data_edit(mtcars,
+          col_bind = "fast",
+          col_options = list(fast = c(TRUE,FALSE)))
+```
+
+------------------------------------------------------------------------
+
+## More Options
+
+![](images/dataedit.JPG)
+
+------------------------------------------------------------------------
+
+## More Options
+
+Dropdown menus can be used to help prevent typing errors when set number of options are available for a column.
+
+```{r, eval=FALSE, echo=TRUE}
+data_edit(mtcars,
+          col_bind = "colour",
+          col_options = list(colour = c("red",
+                                        "blue",
+                                        "orange",
+                                        "green",
+                                        "black")))
+```
+
+------------------------------------------------------------------------
+
+## More Options
+
+![](images/dataedit2.JPG)
+
+------------------------------------------------------------------------
+
+## More Options
+
+Dates can be entered interactively by selecting the relevant day from a calender. 
+
+```{r, eval=FALSE, echo=TRUE}
+data_edit(c("date", "time", "region", "temperature"),
+          col_options = list(date = "date"))
+```
+
+------------------------------------------------------------------------
+
+## More Options
+
+![](images/dataedit3.JPG)
+
+------------------------------------------------------------------------
+
+## More Options
+
+If you would like to keep your data entries a secret, you convert relevant columns to accept passwords as inputs.
+
+```{r, eval=FALSE, echo=TRUE}
+data_edit(c("date", "time", "user", "password"),
+          col_options = list(password = "password"))
+
+```
+
+------------------------------------------------------------------------
+
+## More Options
+
+![](images/dataedit4.JPG)
